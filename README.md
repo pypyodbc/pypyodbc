@@ -4,9 +4,11 @@ pypyodbc
 A pure Python Cross Platform ODBC interface module
 
 
-**This is the GitHub homepage of pypyodbc**  
+**This is the new GitHub homepage of pypyodbc**  
 
-Also check out the  [Wiki](https://github.com/jiangwen365/pypyodbc/wiki) and [Version History](https://github.com/jiangwen365/pypyodbc/wiki/Version-History)
+Old repository was https://github.com/jiangwen365/pypyodbc/
+
+Also check out the (old, pending to be moved) [Wiki](https://github.com/jiangwen365/pypyodbc/wiki) and [Version History](https://github.com/jiangwen365/pypyodbc/wiki/Version-History)
 
 
 Features
@@ -101,7 +103,7 @@ If you have pip available (keep in mind that the version on pypi may be old):
 
     pip install pypyodbc
 
-Or get the latest pypyodbc.py script from GitHub (Main Development site) <https://github.com/jiangwen365/pypyodbc>
+Or get the latest pypyodbc.py script from GitHub (Main Development site) <https://github.com/pypyodbc/pypyodbc>
 
     python setup.py install
 
