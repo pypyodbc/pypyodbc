@@ -1391,12 +1391,12 @@ class Cursor:
                     buf_size = self.connection.type_size_dic[SQL_TYPE_DATE][0]
                     
                     ParameterBuffer = create_buffer(buf_size)
-                    dec_num = self.connection.type_size_dic[SQL_TYPE_DATE][1]
+                    dec_num = self.connection.type_size_dic[SQL_TYPE_DATE][1] or 0
                     
                 else:
                     # SQL Sever <2008 doesn't have a DATE type.
                     sql_type = SQL_TYPE_TIMESTAMP 
-                    buf_size = 10                    
+                    buf_size, dec_num = 10, 0                    
                     ParameterBuffer = create_buffer(buf_size)
                     
     
