@@ -10,11 +10,11 @@ except:
 
 setup(
     name='pypyodbc',
-    version='1.0.5',
+    version='1.3.4',
     description='A Pure Python ctypes ODBC module',
     author='jiangwen365',
     author_email='jiangwen365@gmail.com',
-    url='http://code.google.com/p/pypyodbc/',
+    url='https://github.com/jiangwen365/pypyodbc',
     py_modules=['pypyodbc'],
       long_description="""\
       A Pure Python ctypes ODBC module compatible with PyPy and almost totally same usage as pyodbc
