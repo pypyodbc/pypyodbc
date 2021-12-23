@@ -15,8 +15,7 @@ setup(
     author='jiangwen365',
     author_email='jiangwen365@gmail.com',
     url='https://github.com/pypyodbc/pypyodbc',
-    maintainer='nobody - volunteers welcome',
-    maintainer_email='noreply@github.com',
+    maintainer='Nobody - volunteers welcome',
     py_modules=['pypyodbc'],
       long_description="""\
       A Pure Python ctypes ODBC module compatible with PyPy and almost totally same usage as pyodbc
