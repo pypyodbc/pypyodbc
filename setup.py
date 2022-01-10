@@ -3,11 +3,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
-import pypyodbc
-
 setup(
     name='pypyodbc',
-    version=pypyodbc.version,
+    version='0.0.0a0', # actual version injected at release build time
     description='A Pure Python ctypes ODBC module',
     author='jiangwen365',
     author_email='jiangwen365@gmail.com',

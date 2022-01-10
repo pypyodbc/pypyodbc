@@ -26,7 +26,7 @@ pooling = True
 apilevel = '2.0'
 paramstyle = 'qmark'
 threadsafety = 1
-version = '1.3.6'
+version = '0.0.0a0' # actual version injected at release build time
 
 DEBUG = 0
 # Comment out all "if DEBUG:" statements like below for production
