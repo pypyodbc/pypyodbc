@@ -1,0 +1,9 @@
+# https://packaging.python.org/en/latest/specifications/pypirc/
+
+[testpypi]
+username = __token__
+password = @testpypi-upload-token@
+
+[pypi]
+username = __token__
+password = @pypi-upload-token@
