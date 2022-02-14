@@ -433,7 +433,19 @@ else:
         if library is None:
             # If find_library still can not find the library
             # we try finding it manually from where libodbc.so usually appears
-            lib_paths = ("/usr/lib/libodbc.so","/usr/lib/i386-linux-gnu/libodbc.so","/usr/lib/x86_64-linux-gnu/libodbc.so","/usr/lib/libiodbc.dylib")
+            if sys.platform == 'darwin':
+                lib_paths = (
+                    "/usr/lib/libodbc.dylib",
+                    "/usr/local/lib/libodbc.dylib",
+                    "/opt/homebrew/lib/libodbc.dylib"
+                )
+            else:
+                lib_paths = (
+                    "/usr/lib/libodbc.so",
+                    "/usr/lib/i386-linux-gnu/libodbc.so",
+                    "/usr/lib/x86_64-linux-gnu/libodbc.so",
+                    "/usr/lib/libiodbc.dylib"
+                )
             lib_paths = [path for path in lib_paths if os.path.exists(path)]
             if len(lib_paths) == 0 :
                 raise OdbcNoLibrary('ODBC Library is not found. Is LD_LIBRARY_PATH set?')
