@@ -1,0 +1,6 @@
+*~
+
+# created by python -m build
+dist/
+__pycache__/
+*.egg-info/

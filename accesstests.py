@@ -296,9 +296,6 @@ class AccessTestCase(unittest.TestCase):
         self.assertEquals(row[0], "1")
         self.assertEquals(row[-1], "1")
 
-    def test_version(self):
-        self.assertEquals(3, len(pypyodbc.version.split('.'))) # 1.3.1 etc.
-
     #
     # date, time, datetime
     #

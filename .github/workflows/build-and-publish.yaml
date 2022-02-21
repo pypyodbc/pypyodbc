@@ -1,0 +1,40 @@
+name: Build and Publish Python Package
+
+on:
+  release:
+    types: [published]
+
+# see also...
+# https://github.com/jugmac00/will-it-build/blob/main/action.yml
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/#generating-distribution-archives
+# https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#packaging-your-project
+
+# Intentionally not using setup-python here,
+# instead relying on the pre-installed python3.
+# https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v2
+    - run: .github/scripts/inject-version.sh
+    - run: python3 -m pip install --upgrade build
+    - run: python3 -m build
+    - run: ls -AlF dist/
+
+    - name: Upload artifacts to the release
+      run: |
+        if [[ $GITHUB_EVENT_NAME == release ]]; then
+          .github/scripts/upload-dist-artifacts.sh ${{ secrets.GITHUB_TOKEN }}
+        fi
+
+    - name: Setup credentials for publishing
+      run: |
+        sed <.github/scripts/pypirc-template >$HOME/.pypirc \
+          -e 's;@testpypi-upload-token@;${{ secrets.TESTPYPI_UPLOAD_TOKEN }};' \
+          -e 's;@pypi-upload-token@;${{ secrets.PYPI_UPLOAD_TOKEN }};'
+    - name: Publish artifacts to a repository
+      run: .github/scripts/publish-dist-artifacts.sh
