@@ -1,0 +1,7 @@
+# Required packages in order to develop and test pypyodbc
+
+coverage
+green >= 3.4.1
+mypy
+pylint
+wheel
