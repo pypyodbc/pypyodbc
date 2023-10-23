@@ -437,6 +437,7 @@ else:
                 lib_paths = (
                     "/usr/lib/libodbc.dylib",
                     "/usr/local/lib/libodbc.dylib",
+                    "/usr/local/opt/libiodbc/lib/libiodbc.dylib",
                     "/opt/homebrew/lib/libodbc.dylib"
                 )
             else:
