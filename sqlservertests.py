@@ -54,6 +54,7 @@ def _generate_test_string(length):
 
 if sys.version_info[0] >= 3:
     unicode = str
+    long = int
 
 def _buffer(value):
     if pypyodbc.py_v3:
@@ -145,7 +146,7 @@ class SqlServerTestCase(unittest.TestCase):
 
     def test_getinfo_string(self):
         value = self.cnxn.getinfo(pypyodbc.SQL_CATALOG_NAME_SEPARATOR)
-        self.assertTrue(isinstance(value, (str)))
+        self.assertTrue(isinstance(value, (unicode, str)))
 
     def test_getinfo_bool(self):
         value = self.cnxn.getinfo(pypyodbc.SQL_ACCESSIBLE_TABLES)
@@ -153,7 +154,7 @@ class SqlServerTestCase(unittest.TestCase):
 
     def test_getinfo_int(self):
         value = self.cnxn.getinfo(pypyodbc.SQL_DEFAULT_TXN_ISOLATION)
-        self.assertTrue(isinstance(value, (int)))
+        self.assertTrue(isinstance(value, (int, long)))
 
     def test_getinfo_smallint(self):
         value = self.cnxn.getinfo(pypyodbc.SQL_CONCAT_NULL_BEHAVIOR)
