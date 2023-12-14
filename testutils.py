@@ -38,16 +38,16 @@ def add_to_path():
 
 def print_library_info(cnxn):
     import pypyodbc
-    print 'python:  %s' % sys.version
-    print 'pypyodbc:  %s %s' % (pypyodbc.version, os.path.abspath(pypyodbc.__file__))
-    print 'odbc:    %s' % cnxn.getinfo(pypyodbc.SQL_ODBC_VER)
-    print 'driver:  %s %s' % (cnxn.getinfo(pypyodbc.SQL_DRIVER_NAME), cnxn.getinfo(pypyodbc.SQL_DRIVER_VER))
-    print '         supports ODBC version %s' % cnxn.getinfo(pypyodbc.SQL_DRIVER_ODBC_VER)
-    print 'os:      %s' % platform.system()
-    print 'unicode: Py_Unicode=%s SQLWCHAR=%s' % (pypyodbc.UNICODE_SIZE, pypyodbc.SQLWCHAR_SIZE)
+    print('python:  %s' % sys.version)
+    print('pypyodbc:  %s %s' % (pypyodbc.version, os.path.abspath(pypyodbc.__file__)))
+    print('odbc:    %s' % cnxn.getinfo(pypyodbc.SQL_ODBC_VER))
+    print('driver:  %s %s' % (cnxn.getinfo(pypyodbc.SQL_DRIVER_NAME), cnxn.getinfo(pypyodbc.SQL_DRIVER_VER)))
+    print('         supports ODBC version %s' % cnxn.getinfo(pypyodbc.SQL_DRIVER_ODBC_VER))
+    print('os:      %s' % platform.system())
+    print('unicode: Py_Unicode=%s SQLWCHAR=%s' % (pypyodbc.UNICODE_SIZE, pypyodbc.SQLWCHAR_SIZE))
 
     if platform.system() == 'Windows':
-        print '         %s' % ' '.join([s for s in platform.win32_ver() if s])
+        print('         %s' % ' '.join([s for s in platform.win32_ver() if s]))
 
 
 
